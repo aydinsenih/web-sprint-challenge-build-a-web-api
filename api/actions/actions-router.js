@@ -55,7 +55,7 @@ router.put(
 
 router.delete("/:id", mw.validateActionId, (req, res) => {
     const id = req.params.id;
-    Actions.update(id, req.body)
+    Actions.remove(id)
         .then(() => {
             res.status(204).json({});
         })
